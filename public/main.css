@@ -1,0 +1,15 @@
+html, button {
+  font: 100%/1.5 "Lato", sans-serif;
+  font-weight: 400;
+
+  font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+
+input, textarea {
+  font-family: "lato", sans-serif;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2FwcC9zdHlsZXMvdHlwb2dyYXBoeS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQ0FBa0M7RUFDbEMsa0JBQWlCOztFQUVqQiw2QkFBNEI7RUFDNUIsZ0NBQXVCO01BQXZCLDRCQUF1QjtVQUF2Qix3QkFBdUI7RUFDeEI7O0FBRUQ7RUFDRSxpQ0FBZ0M7RUFDakMiLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJodG1sLCBidXR0b24ge1xuICBmb250OiAxMDAlLzEuNSBcIkxhdG9cIiwgc2Fucy1zZXJpZjtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcblxuICBmb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIHRleHQtc2l6ZS1hZGp1c3Q6IDEwMCU7XG59XG5cbmlucHV0LCB0ZXh0YXJlYSB7XG4gIGZvbnQtZmFtaWx5OiBcImxhdG9cIiwgc2Fucy1zZXJpZjtcbn1cbiJdfQ== */
