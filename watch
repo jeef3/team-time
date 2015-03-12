@@ -19,7 +19,8 @@ tiny-lr &
 
 # Start application with Nodemon for watching
 nodemon index.js \
-  --watch index.js &
+  --watch index.js \
+  --watch views &
 
 # Uses Watchify with manual notify
 make watch_js &
