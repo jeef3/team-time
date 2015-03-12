@@ -1,2 +1,12 @@
 #!/bin/sh
 npm install
+
+echo "Checking for fswatch"
+
+if [ ! $(which fswatch) ]; then
+  echo "  \033[0;33m✘ fswatch not found.\033[0m"
+  echo "    If you want to run ./watch you need to install 'fswatch': \033[1;37mbrew install fswatch\033[0m"
+  echo "    See: \033[1;30mhttps://github.com/emcrisostomo/fswatch\033[0m"
+else
+  echo "  \033[0;32m✔︎fswatch found\033[0m"
+fi
