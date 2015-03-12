@@ -5,7 +5,10 @@ var express = require('express');
 var app = express();
 
 app.set('port', (process.env.PORT || 9000));
-app.use(require('connect-livereload')({ port: 35729 }));
+
+if ('development' == app.get('env')) {
+  app.use(require('connect-livereload')({ port: 35729 }));
+}
 
 app.use(express.static('public'));
 app.get('/', function (req, res) {
