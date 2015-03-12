@@ -41,7 +41,8 @@
   },
   "dependencies": {
     "connect-livereload": "^0.5.3",
-    "express": "^4.12.2"
+    "express": "^4.12.2",
+    "express-handlebars": "^1.2.2"
   },
   "aliasify": {
     "aliases": {

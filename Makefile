@@ -50,18 +50,9 @@ $(styles_bundle): $(styles_src)
 	@$(NOTIFY) $(@F) ||:
 
 
-#
-# Static assets
-
-$(out)/%: $(src)/assets/%
-	@mkdir -p $(@D)
-	cp $< $@
-	@$(NOTIFY) $(@F) ||:
-
 dist: \
 	$(js_bundle) \
-	$(styles_bundle) \
-	$(out)/index.html
+	$(styles_bundle)
 
 test:
 	karma start
