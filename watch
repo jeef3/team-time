@@ -1,0 +1,31 @@
+#!/bin/sh
+
+if [ ! $(which fswatch) ]; then
+  echo "You need to install fswatch to use watch"
+  exit 1
+fi
+
+export PATH=node_modules/.bin:$PATH
+export LIVERELOAD=true
+
+echo "Initial compile"
+make
+
+echo "\033[0;34mDone\033[0m"
+echo "\033[0;32mWatching...\033[0m"
+
+# Start LiveReload server
+tiny-lr &
+
+# Start application with Nodemon for watching
+nodemon index.js \
+  --watch index.js &
+
+# Uses Watchify with manual notify
+make watch_js &
+fswatch -o public/app.js | \
+  xargs -n1 -I {} lib/notify app.js &
+
+# CSS Watch and compile
+fswatch -o app/styles | \
+  xargs -n1 -I{} make dist/public/main.css

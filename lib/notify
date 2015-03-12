@@ -1,0 +1,20 @@
+#!/bin/sh
+
+LIVERELOAD_PORT=35729
+LIVERELOAD_HOST=http://localhost
+LIVERELOAD_URL=${LIVERELOAD_HOST}:${LIVERELOAD_PORT}
+LIVERELOAD_ENDPOINT=${LIVERELOAD_URL}/changed?files=
+
+if [ -z $LIVERELOAD ]; then
+  exit 0
+fi
+
+echo "  \033[0;90mNotifying change for \033[0;34m$1\033[0m"
+curl -s -f ${LIVERELOAD_ENDPOINT}$1 > /dev/null
+status=$?
+
+if [ $status -eq 0 ]; then
+  echo "  \033[0;32m- Notified\033[0m"
+else
+  echo "  \033[0;33m- Failed: LiveReload not running on ${LIVERELOAD_URL}\033[0m"
+fi
