@@ -31,7 +31,6 @@ class AvailabilityBar extends React.Component {
     var tz = this.props.time.clone().tz(this.props.person.tz);
     var offset = barOffset(tz);
     var styles = {
-      width: '300px',
       WebkitTransform: `translateX(${offset})`
     }
 

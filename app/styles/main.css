@@ -3,4 +3,5 @@ html { box-sizing: border-box; }
 
 @import "typography.css";
 
+@import "availability.css";
 @import "availability-bar.css";

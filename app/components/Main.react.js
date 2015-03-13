@@ -49,10 +49,10 @@ class Main extends React.Component {
           })}
         </ul>
 
-        <ul className="c-Availability" style={{listStyle: 'none'}}>
+        <ul className="c-Availability">
           {this.state.people.map((person, i) => {
             return (
-              <li key={i} style={{clear: 'both'}}>
+              <li key={i} className="c-Availability__Row">
                 <AvailabilityBar person={person} time={yesterday} />
                 <AvailabilityBar person={person} time={today} />
                 <AvailabilityBar person={person} time={tomorrow} />
