@@ -47,6 +47,7 @@ class Main extends React.Component {
               <li key={i} style={{clear: 'both'}}>
                 <AvailabilityBar person={person} time={yesterday} />
                 <AvailabilityBar person={person} time={now} />
+                <AvailabilityBar person={person} time={tomorrow} />
               </li>
             );
           })}

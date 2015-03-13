@@ -17,16 +17,23 @@ class AvailabilityBar extends React.Component {
     var awakeStart = 2 + (4 * awake.start) + '%';
     var awakeDuration = (4 * awake.duration) + '%';
 
-    var availableStart = 2 + (4 * availability.start) + '%';
-    var availableDuration = (4 * availability.duration) + '%';
+    var availableBar;
+    if (availability) {
+      var availableStart = 2 + (4 * availability.start) + '%';
+      var availableDuration = (4 * availability.duration) + '%';
+
+      availableBar = (
+        <div className="c-AvailabilityBar__Available"
+          style={{left: availableStart, width: availableDuration}}></div>
+      );
+    }
 
     return (
       <div className="c-AvailabilityBar" style={{width: '300px'}}>
         <div className="c-AvailabilityBar__Unavailable"></div>
         <div className="c-AvailabilityBar__Awake"
             style={{left: awakeStart, width: awakeDuration}}></div>
-        <div className="c-AvailabilityBar__Available"
-            style={{left: availableStart, width: availableDuration}}></div>
+        {availableBar}
 
         <div className="c-AvailabilityBar__Day">{this.props.time.format('dddd')}</div>
       </div>
