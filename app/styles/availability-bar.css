@@ -1,0 +1,48 @@
+:root {
+  --unavailable: #f39c9e;
+  --awake: #999999;
+  --available: #83c780;
+}
+
+.c-AvailabilityBar {
+  position: relative;
+  float: left;
+  height: 2em;
+  margin: 0 1em;
+}
+
+  .c-AvailabilityBar__Unavailable,
+  .c-AvailabilityBar__Awake,
+  .c-AvailabilityBar__Available,
+  .c-AvailabilityBar__Day {
+    position: absolute;
+    height: 100%;
+  }
+
+  .c-AvailabilityBar__Unavailable {
+    width: 100%;
+
+    border: solid 1px var(--unavailable);
+    border-radius: 0.313em;
+
+    background: var(--unavailable);
+  }
+
+  .c-AvailabilityBar__Awake {
+    background: var(--awake);
+  }
+
+  .c-AvailabilityBar__Available {
+    background: var(--available);
+  }
+
+  .c-AvailabilityBar__Day {
+    left: 0;
+    right: 0;
+
+    color: white;
+    line-height: 2em;
+    text-align: center;
+
+    text-shadow: 0 1px 2px black;
+  }

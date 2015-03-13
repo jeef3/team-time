@@ -5,11 +5,11 @@
     "city": "Christchurch",
     "tz": "Pacific/Auckland",
     "availability": {
-      "monday": { "start": "8:00", "end": "16:30" },
-      "tuesday": { "start": "8:00", "end": "16:30" },
-      "wednesday": { "start": "8:00", "end": "16:30" },
-      "thursday": { "start": "8:00", "end": "16:30" },
-      "friday": { "start": "8:00", "end": "16:30" }
+      "monday": { "start": 8, "duration": 8.5 },
+      "tuesday": { "start": 8, "duration": 8.5 },
+      "wednesday": { "start": 8, "duration": 8.5 },
+      "thursday": { "start": 8, "duration": 8.5 },
+      "friday": { "start": 8, "duration": 8.5 }
     }
   },
   {
@@ -18,11 +18,36 @@
     "city": "New York",
     "tz": "America/New_York",
     "availability": {
-      "monday": { "start": "9:00", "end": "17:00" },
-      "tuesday": { "start": "9:00", "end": "17:00" },
-      "wednesday": { "start": "9:00", "end": "17:00" },
-      "thursday": { "start": "9:00", "end": "17:00" },
-      "friday": { "start": "9:00", "end": "17:00" }
+      "monday": { "start": 9, "duration": 8 },
+      "tuesday": { "start": 9, "duration": 8 },
+      "wednesday": { "start": 9, "duration": 8 },
+      "thursday": { "start": 9, "duration": 8 },
+      "friday": { "start": 9, "duration": 8 }
+    }
+  },
+  {
+    "name": "Another Person",
+    "avatar": "",
+    "city": "Christchurch",
+    "tz": "Pacific/Auckland",
+    "availability": {
+      "monday": { "start": 9, "duration": 8 },
+      "tuesday": { "start": 9, "duration": 8 },
+      "thursday": { "start": 9, "duration": 8 },
+      "friday": { "start": 9, "duration": 8 }
+    }
+  },
+  {
+    "name": "One More",
+    "avatar": "",
+    "city": "Abu Dhabi",
+    "tz": "Asia/Dubai",
+    "availability": {
+      "monday": { "start": 9, "duration": 8 },
+      "tuesday": { "start": 9, "duration": 8 },
+      "wednesday": { "start": 9, "duration": 8 },
+      "thursday": { "start": 9, "duration": 8 },
+      "friday": { "start": 9, "duration": 8 }
     }
   }
 ]
