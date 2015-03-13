@@ -20,6 +20,7 @@ tiny-lr &
 # Start application with Nodemon for watching
 nodemon index.js \
   --watch index.js \
+  --watch people.json \
   --watch views &
 
 # Uses Watchify with manual notify
@@ -29,4 +30,4 @@ fswatch -o public/app.js | \
 
 # CSS Watch and compile
 fswatch -o app/styles | \
-  xargs -n1 -I{} make dist/public/main.css
+  xargs -n1 -I{} make public/main.css
