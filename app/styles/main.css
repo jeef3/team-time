@@ -5,3 +5,5 @@ html { box-sizing: border-box; }
 
 @import "availability.css";
 @import "availability-bar.css";
+@import "local-time.css";
+@import "person.css";

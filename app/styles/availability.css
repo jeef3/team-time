@@ -1,0 +1,11 @@
+.c-Availability {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+  .c-Availability__Row {
+    overflow: hidden;
+    clear: both;
+  }

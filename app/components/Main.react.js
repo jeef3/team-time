@@ -5,6 +5,8 @@ import moment from 'moment-timezone';
 
 import PeopleStore from '../stores/PeopleStore';
 import AvailabilityBar from './AvailabilityBar.react';
+import LocalTime from './LocalTime.react';
+import Person from './Person.react';
 
 function attachTimezone(now, person) {
   person.time = now.clone().tz(person.tz);
@@ -41,25 +43,27 @@ class Main extends React.Component {
 
     return (
       <div>
-        <div>{today.format('LLLL')}</div>
+        <LocalTime time={today} />
 
         <ul className="c-People">
           {this.state.people.map((person, i) => {
-            return <li key={i}>{person.name} - {person.time.format('LLLL')}</li>;
+            return <Person key={i} person={person} />;
           })}
         </ul>
 
-        <ul className="c-Availability">
-          {this.state.people.map((person, i) => {
-            return (
-              <li key={i} className="c-Availability__Row">
-                <AvailabilityBar person={person} time={yesterday} />
-                <AvailabilityBar person={person} time={today} />
-                <AvailabilityBar person={person} time={tomorrow} />
-              </li>
-            );
-          })}
-        </ul>
+        <div className="c-AvailabilityWindow">
+          <ul className="c-Availability">
+            {this.state.people.map((person, i) => {
+              return (
+                <li key={i} className="c-Availability__Row">
+                  <AvailabilityBar person={person} time={yesterday} />
+                  <AvailabilityBar person={person} time={today} />
+                  <AvailabilityBar person={person} time={tomorrow} />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

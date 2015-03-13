@@ -1,0 +1,36 @@
+.c-Person {
+  position: relative;
+  height: 3em;
+  width: 12em;
+  margin: 0 0 0.313em;
+
+  list-style: none;
+}
+
+  .c-Person__Avatar {
+    float: left;
+    width: 3em;
+    height: 3em;
+    margin-right: 0.5em;
+
+    border-radius: 50%;
+    background: pink;
+  }
+
+  .c-Person__Name {
+    font-weight: 600;
+  }
+
+  .c-Person__City {
+    color: #999;
+    font-weight: 300;
+  }
+
+  .c-Person__Time {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+    font-weight: 900;
+    opacity: 0.05;
+  }
