@@ -1,7 +1,7 @@
 :root {
-  --unavailable: #f39c9e;
-  --awake: #999999;
-  --available: #83c780;
+  --unavailable: var(--retro-effect-ii);
+  --awake: var(--orange-sorbet);
+  --available: var(--minty-peas);
 }
 
 .c-AvailabilityBar {
@@ -18,19 +18,22 @@
   }
 
   .c-AvailabilityBar__Unavailable {
-    width: 100%;
+    left: 1px;
+    right: 1px;
 
-    border: solid 1px var(--unavailable);
-    border-radius: 0.313em;
+    border: solid 0.125em var(--unavailable-border);
+    border-radius: 2em;
 
     background: var(--unavailable);
   }
 
   .c-AvailabilityBar__Awake {
+    border: solid 0.125em var(--awake-border);
     background: var(--awake);
   }
 
   .c-AvailabilityBar__Available {
+    border: solid 1px var(--available-border);
     background: var(--available);
   }
 

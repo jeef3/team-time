@@ -1,9 +1,24 @@
 .c-Availability {
-  padding: 0;
-  margin: 0;
-
-  list-style: none;
+  display: flex;
+  align-items: stretch;
 }
+
+  .c-Availability__People {
+    margin: 0;
+    padding: 0;
+
+    flex-grow: 0;
+    list-style: none;
+  }
+
+  .c-Availability__List {
+    margin: 0;
+    padding: 0 0 0 1em;
+
+    flex-grow: 1;
+
+    list-style: none;
+  }
 
   .c-Availability__Row {
     position: relative;

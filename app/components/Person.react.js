@@ -8,7 +8,8 @@ class Person extends React.Component {
 
     return (
       <li className="c-Person">
-        <div className="c-Person__Avatar o-avatar"></div>
+        <div className="c-Person__Avatar o-avatar"
+            style={{backgroundImage: `url(${person.avatar})`}}></div>
         <div className="c-Person__Name">{person.name}</div>
         <div className="c-Person__City">{person.city}</div>
         <div className="c-Person__Time">{person.time.format('HH:mm')}</div>

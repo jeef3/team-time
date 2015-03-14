@@ -12,15 +12,20 @@
     width: 3em;
     height: 3em;
     margin-right: 0.5em;
+
+    background-size: 3em;
   }
 
   .c-Person__Name {
+    padding-top: 0.313em;
     font-weight: 600;
   }
 
   .c-Person__City {
-    color: #999;
+    line-height: 1;
+    font-size: 0.813em;
     font-weight: 300;
+    color: #999;
   }
 
   .c-Person__Time {

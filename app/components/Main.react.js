@@ -44,19 +44,20 @@ class Main extends React.Component {
     var today = this.state.now;
     var yesterday = today.clone().subtract(1, 'day');
     var tomorrow = today.clone().add(1, 'day');
+    var dayAfter = tomorrow.clone().add(1, 'day');
 
     return (
       <div className="c-Main">
         <LocalTime time={today} />
 
-        <div className="c-AvailabilityWindow">
-          <ul className="c-People">
+        <div className="c-Availability">
+          <ul className="c-Availability__People">
             {this.state.people.map((person, i) => {
               return <Person key={i} person={person} />
             })}
           </ul>
 
-          <ul className="c-Availability">
+          <ul className="c-Availability__List">
             {this.state.people.map((person, i) => {
               var tz = today.clone().tz(person.tz);
               var offset = barOffset(tz);
@@ -64,6 +65,7 @@ class Main extends React.Component {
               var yesterdayOffset = offset - 100;
               var todayOffset = offset;
               var tomorrowOffset = offset + 100;
+              var dayAfterOffset = offset + 200;
 
               return (
                 <li key={i} className="c-Availability__Row">
@@ -77,6 +79,10 @@ class Main extends React.Component {
                   </div>
                   <div className="c-Availability__Day"
                       style={{WebkitTransform: `translateX(${tomorrowOffset}%)`}}>
+                    <AvailabilityBar person={person} time={tomorrow} />
+                  </div>
+                  <div className="c-Availability__Day"
+                      style={{WebkitTransform: `translateX(${dayAfterOffset}%)`}}>
                     <AvailabilityBar person={person} time={tomorrow} />
                   </div>
                 </li>
