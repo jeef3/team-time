@@ -10,10 +10,6 @@ function barCalc(span) {
   };
 }
 
-function barOffset(tz) {
-  return ((tz.utcOffset() / 60) * 4) + '%';
-}
-
 class AvailabilityBar extends React.Component {
   render() {
     var availability = this.props.person.availability[this.props.time.format('dddd').toLowerCase()];
@@ -28,14 +24,8 @@ class AvailabilityBar extends React.Component {
       );
     }
 
-    var tz = this.props.time.clone().tz(this.props.person.tz);
-    var offset = barOffset(tz);
-    var styles = {
-      WebkitTransform: `translateX(${offset})`
-    }
-
     return (
-      <div className="c-AvailabilityBar" style={styles}>
+      <div className="c-AvailabilityBar">
         <div className="c-AvailabilityBar__Unavailable"></div>
         <div className="c-AvailabilityBar__Awake" style={barCalc(awake)}></div>
         {availableBar}

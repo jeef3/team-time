@@ -6,17 +6,13 @@
 
 .c-AvailabilityBar {
   position: relative;
-  float: left;
-  height: 2em;
-  margin: 0.5em 0;
-
-  width: 400px;
+  height: 100%;
+  width: 100%;
 }
 
   .c-AvailabilityBar__Unavailable,
   .c-AvailabilityBar__Awake,
-  .c-AvailabilityBar__Available,
-  .c-AvailabilityBar__Day {
+  .c-AvailabilityBar__Available {
     position: absolute;
     height: 100%;
   }
@@ -39,12 +35,13 @@
   }
 
   .c-AvailabilityBar__Day {
-    left: 0;
-    right: 0;
+    position: relative;
+    top: 50%;
 
     color: white;
-    line-height: 2em;
     text-align: center;
 
     text-shadow: 0 1px 2px black;
+
+    transform: translateY(-50%);
   }

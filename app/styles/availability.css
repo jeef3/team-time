@@ -6,6 +6,17 @@
 }
 
   .c-Availability__Row {
+    position: relative;
     overflow: hidden;
-    clear: both;
+    height: 48px;
+    margin-bottom: 0.313em;
+  }
+
+  .c-Availability__Day {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15em;
+
+    padding: 0.5em 0;
   }

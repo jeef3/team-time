@@ -3,7 +3,17 @@ html { box-sizing: border-box; }
 
 @import "typography.css";
 
+/* Objects */
+@import "avatar.css";
+
+/* Components */
 @import "availability.css";
 @import "availability-bar.css";
 @import "local-time.css";
+@import "people.css";
 @import "person.css";
+
+.c-Main {
+  margin: 0 auto;
+  width: 700px;
+}

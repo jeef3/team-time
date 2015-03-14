@@ -12,9 +12,6 @@
     width: 3em;
     height: 3em;
     margin-right: 0.5em;
-
-    border-radius: 50%;
-    background: pink;
   }
 
   .c-Person__Name {

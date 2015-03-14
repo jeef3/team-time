@@ -27,6 +27,10 @@ function getState() {
   return { now, people };
 }
 
+function barOffset(tz) {
+  return ((tz.utcOffset() / 60) * (100/24));
+}
+
 class Main extends React.Component {
   constructor() {
     this.state = getState();
@@ -42,23 +46,39 @@ class Main extends React.Component {
     var tomorrow = today.clone().add(1, 'day');
 
     return (
-      <div>
+      <div className="c-Main">
         <LocalTime time={today} />
 
-        <ul className="c-People">
-          {this.state.people.map((person, i) => {
-            return <Person key={i} person={person} />;
-          })}
-        </ul>
-
         <div className="c-AvailabilityWindow">
+          <ul className="c-People">
+            {this.state.people.map((person, i) => {
+              return <Person key={i} person={person} />
+            })}
+          </ul>
+
           <ul className="c-Availability">
             {this.state.people.map((person, i) => {
+              var tz = today.clone().tz(person.tz);
+              var offset = barOffset(tz);
+
+              var yesterdayOffset = offset - 100;
+              var todayOffset = offset;
+              var tomorrowOffset = offset + 100;
+
               return (
                 <li key={i} className="c-Availability__Row">
-                  <AvailabilityBar person={person} time={yesterday} />
-                  <AvailabilityBar person={person} time={today} />
-                  <AvailabilityBar person={person} time={tomorrow} />
+                  <div className="c-Availability__Day"
+                      style={{WebkitTransform: `translateX(${yesterdayOffset}%)`}}>
+                    <AvailabilityBar person={person} time={yesterday} />
+                  </div>
+                  <div className="c-Availability__Day"
+                      style={{WebkitTransform: `translateX(${todayOffset}%)`}}>
+                    <AvailabilityBar person={person} time={today} />
+                  </div>
+                  <div className="c-Availability__Day"
+                      style={{WebkitTransform: `translateX(${tomorrowOffset}%)`}}>
+                    <AvailabilityBar person={person} time={tomorrow} />
+                  </div>
                 </li>
               );
             })}
