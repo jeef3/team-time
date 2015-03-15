@@ -8,30 +8,41 @@
     padding: 0;
 
     flex-grow: 0;
-    list-style: none;
   }
 
   .c-Availability__List {
-    margin: 0;
-    padding: 0 0 0 1em;
+    overflow: hidden;
+    position: relative;
+    margin: 0 0 0 1em;
+    padding: 0;
 
     flex-grow: 1;
+  }
 
-    list-style: none;
+  .c-Availability__List:after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+
+    border-right: solid 2px var(--grey-beige);
   }
 
   .c-Availability__Row {
     position: relative;
-    overflow: hidden;
     height: 48px;
     margin-bottom: 0.313em;
+
+    transform: translateX(50%);
   }
 
   .c-Availability__Day {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 15em;
+    width: 50%;
 
     padding: 0.5em 0;
   }

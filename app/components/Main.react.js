@@ -27,10 +27,6 @@ function getState() {
   return { now, people };
 }
 
-function barOffset(tz) {
-  return ((tz.utcOffset() / 60) * (100/24));
-}
-
 class Main extends React.Component {
   constructor() {
     this.state = getState();
@@ -43,8 +39,8 @@ class Main extends React.Component {
   render() {
     var today = this.state.now;
     var yesterday = today.clone().subtract(1, 'day');
+    var dayBefore = yesterday.clone().subtract(1, 'day');
     var tomorrow = today.clone().add(1, 'day');
-    var dayAfter = tomorrow.clone().add(1, 'day');
 
     return (
       <div className="c-Main">
@@ -59,16 +55,24 @@ class Main extends React.Component {
 
           <ul className="c-Availability__List">
             {this.state.people.map((person, i) => {
-              var tz = today.clone().tz(person.tz);
-              var offset = barOffset(tz);
+              // var offset = barOffset(person.time);
+              var offset = (today.utcOffset() - person.time.utcOffset());
+              offset = offset - (today.hours() * 60);
+              offset = offset - today.minutes();
+              var percentShift = (offset / 60) * (100/24);
 
-              var yesterdayOffset = offset - 100;
-              var todayOffset = offset;
-              var tomorrowOffset = offset + 100;
-              var dayAfterOffset = offset + 200;
+
+              var todayOffset = percentShift;
+              var yesterdayOffset = todayOffset - 100;
+              var dayBeforeOffset = yesterdayOffset - 100;
+              var tomorrowOffset = todayOffset + 100;
 
               return (
                 <li key={i} className="c-Availability__Row">
+                  <div className="c-Availability__Day"
+                      style={{WebkitTransform: `translateX(${dayBeforeOffset}%)`}}>
+                    <AvailabilityBar person={person} time={dayBefore} />
+                  </div>
                   <div className="c-Availability__Day"
                       style={{WebkitTransform: `translateX(${yesterdayOffset}%)`}}>
                     <AvailabilityBar person={person} time={yesterday} />
@@ -79,10 +83,6 @@ class Main extends React.Component {
                   </div>
                   <div className="c-Availability__Day"
                       style={{WebkitTransform: `translateX(${tomorrowOffset}%)`}}>
-                    <AvailabilityBar person={person} time={tomorrow} />
-                  </div>
-                  <div className="c-Availability__Day"
-                      style={{WebkitTransform: `translateX(${dayAfterOffset}%)`}}>
                     <AvailabilityBar person={person} time={tomorrow} />
                   </div>
                 </li>
