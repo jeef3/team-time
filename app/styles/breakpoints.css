@@ -1,0 +1,14 @@
+/* 336px and up (iPhone landscape) */
+@custom-media --breakpoint-small (min-width: 21em);
+
+/* 576px and up (iPad portrait) */
+@custom-media --breakpoint-medium (min-width: 36em);
+
+/* 784px and up */
+@custom-media --breakpoint-large (min-width: 49em);
+
+/* 960px and up (iPad landscape and small desktop) */
+@custom-media --breakpoint-x-large (min-width: 60em);
+
+/* 1440px and up (Proper sized desktops) */
+@custom-media --breakpoint-xx-large (min-width: 90em);

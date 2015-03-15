@@ -1,16 +1,16 @@
 :root {
+  /* Dark Brown */
+  --nothing-much: #5a545c;
+
+  /* Red Brown */
+  --miss-maudie-atkins: #a06a74;
+
+  /* Pinkish */
+  --all-that-i-believe: #d6b6ad;
+
+  /* Tan */
+  --moth: #dbd1bd;
+
   /* Green */
-  --minty-peas: #17a768;
-
-  /* Red */
-  --retro-effect-ii: #f1601d;
-
-  /* Orange */
-  --orange-sorbet: #f1d11d;
-
-  /* Light beige */
-  --beige-grey: #e7e0d2;
-
-  /* Dark beige */
-  --grey-beige: #bbae93;
+  --you-can-trust-me: #dee5c4;
 }

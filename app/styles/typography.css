@@ -4,6 +4,8 @@ html, button {
 
   font-smoothing: antialiased;
   text-size-adjust: 100%;
+
+  color: var(--nothing-much);
 }
 
 input, textarea {

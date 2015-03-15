@@ -1,10 +1,12 @@
 .c-Person {
   position: relative;
   height: 3em;
-  width: 12em;
+  width: 3em;
   margin: 0 0 0.313em;
 
   list-style: none;
+
+  transition: width 200ms ease-in-out;
 }
 
   .c-Person__Avatar {
@@ -18,7 +20,10 @@
 
   .c-Person__Name {
     padding-top: 0.313em;
+
     font-weight: 600;
+    opacity: 0;
+    transition: opacity 200ms 200ms ease-in-out;
   }
 
   .c-Person__City {
@@ -26,13 +31,28 @@
     font-size: 0.813em;
     font-weight: 300;
     color: #999;
+    opacity: 0;
+    transition: opacity 200ms 200ms ease-in-out;
   }
 
   .c-Person__Time {
     position: absolute;
     top: 0;
     right: 0;
+
     font-size: 2em;
     font-weight: 900;
-    opacity: 0.05;
+    opacity: 0;
+    transition: opacity 200ms 200ms ease-in-out;
   }
+
+@media (--breakpoint-medium) {
+  .c-Person { width: 8em; }
+  .c-Person__Name { opacity: 1; }
+  .c-Person__City { opacity: 1; }
+}
+
+@media (--breakpoint-large) {
+  .c-Person { width: 12em; }
+  .c-Person__Time { opacity: 0.05; }
+}

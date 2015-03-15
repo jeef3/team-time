@@ -27,7 +27,7 @@
     left: 50%;
     bottom: 0;
 
-    border-right: solid 2px var(--grey-beige);
+    border-right: solid 2px var(--nothing-much);
   }
 
   .c-Availability__Row {
@@ -42,7 +42,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 50%;
+    width: 75%;
 
     padding: 0.5em 0;
   }

@@ -1,8 +1,11 @@
-html { box-sizing: border-box; }
-*, *:before, *:after { box-sizing: inherit; }
-
+/* Variables */
 @import "palette.css";
+@import "breakpoints.css";
+
+/* Base */
+@import "reset.css";
 @import "typography.css";
+@import "util.css";
 
 /* Objects */
 @import "avatar.css";
@@ -15,6 +18,7 @@ html { box-sizing: border-box; }
 @import "person.css";
 
 .c-Main {
+  padding: 1em;
   margin: 0 auto;
-  width: 900px;
+  max-width: 900px;
 }

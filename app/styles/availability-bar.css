@@ -1,7 +1,7 @@
 :root {
-  --unavailable: var(--retro-effect-ii);
-  --awake: var(--orange-sorbet);
-  --available: var(--minty-peas);
+  --unavailable: var(--all-that-i-believe);
+  --awake: rgba(255, 255, 255, 0.3);
+  --available: var(--you-can-trust-me);
 }
 
 .c-AvailabilityBar {
@@ -15,25 +15,24 @@
   .c-AvailabilityBar__Available {
     position: absolute;
     height: 100%;
+
+    border-bottom: solid 3px rgba(0, 0, 0, 0.1);
   }
 
   .c-AvailabilityBar__Unavailable {
     left: 1px;
     right: 1px;
 
-    border: solid 0.125em var(--unavailable-border);
-    border-radius: 2em;
+    border-radius: 0.813em;
 
     background: var(--unavailable);
   }
 
   .c-AvailabilityBar__Awake {
-    border: solid 0.125em var(--awake-border);
     background: var(--awake);
   }
 
   .c-AvailabilityBar__Available {
-    border: solid 1px var(--available-border);
     background: var(--available);
   }
 
@@ -41,10 +40,9 @@
     position: relative;
     top: 50%;
 
-    color: white;
+    font-size: 0.813em;
+    font-weight: 900;
     text-align: center;
-
-    text-shadow: 0 1px 2px black;
 
     transform: translateY(-50%);
   }

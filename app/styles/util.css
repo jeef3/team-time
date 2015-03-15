@@ -1,0 +1,6 @@
+.u-truncate {
+  overflow: hidden;
+
+  white-space: pre;
+  text-overflow: ellipsis;
+}
