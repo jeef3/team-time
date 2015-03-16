@@ -33,7 +33,7 @@ class Main extends React.Component {
 
     setInterval(() => {
       this.setState(getState());
-    }, 1000);
+    }, 10000);
   }
 
   render() {
