@@ -7,6 +7,12 @@
     "build": "make",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "browserify": {
+    "transform": ["browserify-shim", "reactify", "babelify"]
+  },
+  "browserify-shim": {
+    "react": "global:React"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jeef3/team-time"
@@ -27,6 +33,7 @@
     "autoprefixer": "^5.1.0",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
+    "browserify-shim": "^3.8.3",
     "make-livereload": "^0.1.1",
     "minimist": "^1.1.1",
     "moment-timezone": "^0.3.0",
@@ -35,7 +42,6 @@
     "postcss-custom-media": "^3.0.0",
     "postcss-custom-properties": "^3.0.1",
     "postcss-import": "^5.0.3",
-    "react": "^0.13.0",
     "reactify": "^1.0.0",
     "tiny-lr": "^0.1.5",
     "watchify": "^2.4.0"
