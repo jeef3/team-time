@@ -48,13 +48,13 @@ class Main extends React.Component {
 
         <div className="c-Availability">
           <ul className="c-Availability__People">
-            {this.state.people.map((person, i) => {
-              return <Person key={i} person={person} />
+            {this.state.people.map((person) => {
+              return <Person key={person._id} person={person} />
             })}
           </ul>
 
           <ul className="c-Availability__List">
-            {this.state.people.map((person, i) => {
+            {this.state.people.map((person) => {
               // var offset = barOffset(person.time);
               var offset = (today.utcOffset() - person.time.utcOffset());
               offset = offset - (today.hours() * 60);
@@ -68,7 +68,7 @@ class Main extends React.Component {
               var tomorrowOffset = todayOffset + 100;
 
               return (
-                <li key={i} className="c-Availability__Row">
+                <li key={person._id} className="c-Availability__Row">
                   <div className="c-Availability__Day"
                       style={{WebkitTransform: `translateX(${dayBeforeOffset}%)`}}>
                     <AvailabilityBar person={person} time={dayBefore} />

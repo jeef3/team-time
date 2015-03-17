@@ -12,7 +12,12 @@ function barCalc(span) {
 
 class AvailabilityBar extends React.Component {
   render() {
-    var availability = this.props.person.availability[this.props.time.format('dddd').toLowerCase()];
+    var availability;
+    if (!this.props.person.availability) {
+      availability = {};
+    } else {
+      availability = this.props.person.availability[this.props.time.format('dddd').toLowerCase()];
+    }
 
     var awake = { start: 7, duration: 14 };
 
