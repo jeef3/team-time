@@ -8,7 +8,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserify": {
-    "transform": ["browserify-shim", "reactify", "babelify"]
+    "transform": [
+      "browserify-shim",
+      "reactify",
+      "babelify"
+    ]
   },
   "browserify-shim": {
     "react": "global:React"

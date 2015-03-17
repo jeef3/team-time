@@ -21,6 +21,7 @@ tiny-lr &
 nodemon index.js \
   --watch index.js \
   --watch people.json \
+  --watch server \
   --watch views/**/*.handlebars &
 
 # Uses Watchify with manual notify
