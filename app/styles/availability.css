@@ -1,3 +1,8 @@
+:root {
+  /* Zoom. 24 hours takes up x% of the width of the window */
+  --zoom: 50%;
+}
+
 .c-Availability {
   display: flex;
   align-items: stretch;
@@ -42,7 +47,16 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 75%;
+    width: var(--zoom);
 
     padding: 0.5em 0;
+  }
+
+  .c-Availability__Hour {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    opacity: 0.5;
+    border-right: solid 1px var(--moth);
   }

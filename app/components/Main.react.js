@@ -42,6 +42,24 @@ class Main extends React.Component {
     var dayBefore = yesterday.clone().subtract(1, 'day');
     var tomorrow = today.clone().add(1, 'day');
 
+    var globalOffset = 0;
+    // Zoom as at 50%, so half the offset
+    globalOffset = ((globalOffset - (today.minutes() * (100/24)) / 60) / 2);
+
+    // Zoom is at 50%, so half the ratio
+    var ratio = 100 / 48;
+
+    var hourMarkers = [];
+    // Zoom is at 50%, so double the number of markers
+    for (let h = 0; h < 48; h++) {
+      hourMarkers.push(
+        <div className={`c-Availability__Hour c-Availability__Hour--${h}`}
+            style={{
+              left: `${(h * ratio) + globalOffset}%`,
+            }}></div>
+      );
+    }
+
     return (
       <div className="c-Main">
         <LocalTime time={today} />
@@ -54,6 +72,8 @@ class Main extends React.Component {
           </ul>
 
           <ul className="c-Availability__List">
+            {hourMarkers}
+
             {this.state.people.map((person) => {
               // var offset = barOffset(person.time);
               var offset = (today.utcOffset() - person.time.utcOffset());
