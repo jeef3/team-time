@@ -7,11 +7,12 @@
     "build": "make",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "browser": "./app/app.js",
   "browserify": {
     "transform": [
-      "browserify-shim",
       "reactify",
-      "babelify"
+      "babelify",
+      "browserify-shim"
     ]
   },
   "browserify-shim": {

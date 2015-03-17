@@ -16,11 +16,8 @@ js_src    := $(shell find $(src) -name '*.js*')
 js_entry  := $(src)/app.js
 js_bundle := $(out)/app.js
 
-browserify_options := \
+browserify_options := . \
 	--debug \
-	--entry $(js_entry) \
-	--transform 'reactify' \
-	--transform 'babelify' \
 	--outfile $(js_bundle)
 
 
