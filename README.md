@@ -86,7 +86,7 @@ Or, again if you're using Make, I've added a watch script with Livereload. *Requ
 If you're developing with a local MongoDB instance simply include the `MONGO_URI` environment variable when you start the app:
 
 ```
-MONGO_URI=mongodb://localhost/team-time
+MONGO_URI=mongodb://localhost/team-time npm start
 ```
 
 Or, (I've added [dotenv](https://www.npmjs.com/package/dotenv)) create a new `.env` file and add it there.
