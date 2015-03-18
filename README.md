@@ -2,7 +2,7 @@
 
 Team Time is an application inspired by [timezone.io](http://timezone.io) and [everytimezone.com](http://everytimezone.com) to allow you to see not only what time it is for your co-workers, but also their availability.
 
-Not everyone works 9-5, Monday-Friday, so while knowing their local time is helpful, I wanted to also know if a team mate was even working that day.
+Not everyone works 9-5, Monday-Friday, so while knowing their local time is helpful, I also wanted to know if a team mate was even working that day.
 
 ![Team Time screenshot](screenshot.png)
 
