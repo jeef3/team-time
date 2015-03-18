@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "make clean && make",
+    "build": "browserify . -d -o public/app.js && ./lib/post-css.js app/styles/main.css public/main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "index.js",
