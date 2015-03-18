@@ -8,7 +8,11 @@ Not everyone works 9-5, Monday-Friday, so while knowing their local time is help
 
 ## Setup
 
-Clone this repository and either add a `people.json` to the root, or set up a MongoDB instance. If using the `people.json` use the following format:
+Clone this repository and either add a `people.json` to the root, or set up a MongoDB instance.
+
+### people.json
+
+If using the `people.json` use the following format:
 
 ``` json
 [
@@ -27,6 +31,18 @@ Clone this repository and either add a `people.json` to the root, or set up a Mo
   }
 ]
 ```
+
+### MongoDB
+
+Add a MongoDB add-on to your Heroku app and rename or copy the Mongo URI to an environment variable named `MONGO_URI`.
+
+You can view/add/edit/delete people via the RESTful API at `/people`, e.g.:
+
+```
+curl -XPOST -H "Content-type: application/json" -d '{ ...JSON data... }' <my Heroku app URL>
+```
+
+Or if your MongoDB add-on supports it, via their web interface.
 
 ## Deploy
 
@@ -64,3 +80,18 @@ Or, again if you're using Make, I've added a watch script with Livereload. *Requ
 ```
 ./watch
 ```
+
+### MongoDB
+
+If you're developing with a local MongoDB instance simply include the `MONGO_URI` environment variable when you start the app:
+
+```
+MONGO_URI=mongodb://localhost/team-time
+```
+
+Or, (I've added [dotenv](https://www.npmjs.com/package/dotenv)) create a new `.env` file and add it there.
+
+```
+echo "MONGO_URI=mongodb://localhost/team-time" > .env
+```
+
