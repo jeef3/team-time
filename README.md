@@ -18,10 +18,10 @@ Clone this repository and either add a `people.json` to the root, or set up a Mo
     "city": "Christchurch",
     "tz": "Pacific/Auckland",
     "availability": {
-      "monday": { "start": 8, "duration": 8.5 }
-      "tuesday": { "start": 8, "duration": 8.5 }
-      "wednesday": { "start": 8, "duration": 8.5 }
-      "thursday": { "start": 8, "duration": 8.5 }
+      "monday": { "start": 8, "duration": 8.5 },
+      "tuesday": { "start": 8, "duration": 8.5 },
+      "wednesday": { "start": 8, "duration": 8.5 },
+      "thursday": { "start": 8, "duration": 8.5 },
       "friday": { "start": 8, "duration": 8.5 }
     }
   }
