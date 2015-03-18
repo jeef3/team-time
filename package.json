@@ -1,12 +1,27 @@
 {
   "name": "team-time",
+  "author": "Jeff Knaggs",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "Team time zone and availability",
-  "main": "index.js",
+  "keywords": [
+    "timezone",
+    "team",
+    "remote"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeef3/team-time"
+  },
+  "bugs": {
+    "url": "https://github.com/jeef3/team-time/issues"
+  },
   "scripts": {
-    "build": "make",
+    "start": "node index.js",
+    "build": "make clean && make",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "index.js",
   "browser": "./app/app.js",
   "browserify": {
     "transform": [
@@ -17,20 +32,6 @@
   },
   "browserify-shim": {
     "react": "global:React"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jeef3/team-time"
-  },
-  "keywords": [
-    "timezone",
-    "team",
-    "remote"
-  ],
-  "author": "Jeff Knaggs",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jeef3/team-time/issues"
   },
   "homepage": "https://github.com/jeef3/team-time",
   "devDependencies": {
