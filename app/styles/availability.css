@@ -24,39 +24,68 @@
     flex-grow: 1;
   }
 
-  .c-Availability__List:after {
-    content: '';
-
+  .c-Availability__ZoomContainer {
     position: absolute;
     top: 0;
+    bottom: 0;
+    /* This keeps the zoom happening from the middle */
     left: 50%;
+    /* Alter width for zoom */
+    width: var(--zoom);
+  }
+
+  .c-Availability__PanContainer {
+    width: 100%;
+    height: 100%;
+
+    /* Alter translateX for pan */
+  }
+
+  .c-Availability__LocalOffsetContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .c-Availability__CurrentTimeMarker {
+    position: absolute;
+    top: 0;
+    left: -1px;
     bottom: 0;
 
-    border-right: solid 2px var(--nothing-much);
+    border-right: solid 3px var(--nothing-much);
   }
 
   .c-Availability__Row {
     position: relative;
     height: 48px;
     margin-bottom: 0.313em;
-
-    transform: translateX(50%);
   }
 
   .c-Availability__Day {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: var(--zoom);
-
+    width: 100%;
+    height: 100%;
     padding: 0.5em 0;
+
+    /* Days are positioned using translateX */
+  }
+
+  .c-Availability__Background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
   .c-Availability__Hour {
     position: absolute;
     top: 0;
     bottom: 0;
+    width: calc(100% / 24);
 
     opacity: 0.5;
     border-right: solid 1px var(--moth);
+  }
+  .c-Availability__Hour:nth-child(odd) {
+    /* opacity: 0.25; */
+    /* background: var(--moth); */
   }

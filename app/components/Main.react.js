@@ -27,6 +27,22 @@ function getState() {
   return { now, people };
 }
 
+function getLocalOffset(localTime) {
+  var offset = 0;
+  offset = offset - (localTime.hours() * 60);
+  offset = offset - localTime.minutes();
+  var percentShift = (offset / 60) * (100/24);
+
+  return percentShift;
+}
+
+function getOffset(localTime, compareTime) {
+  var offset = (localTime.utcOffset() - compareTime.utcOffset());
+  var percentShift = (offset / 60) * (100/24);
+
+  return percentShift;
+}
+
 class Main extends React.Component {
   constructor() {
     this.state = getState();
@@ -42,20 +58,15 @@ class Main extends React.Component {
     var dayBefore = yesterday.clone().subtract(1, 'day');
     var tomorrow = today.clone().add(1, 'day');
 
-    var globalOffset = 0;
-    // Zoom as at 50%, so half the offset
-    globalOffset = ((globalOffset - (today.minutes() * (100/24)) / 60) / 2);
-
-    // Zoom is at 50%, so half the ratio
-    var ratio = 100 / 48;
+    var ratio = 100 / 24;
 
     var hourMarkers = [];
     // Zoom is at 50%, so double the number of markers
-    for (let h = 0; h < 48; h++) {
+    for (let h = 0; h < 24; h++) {
       hourMarkers.push(
-        <div className={`c-Availability__Hour c-Availability__Hour--${h}`}
+        <div className={'c-Availability__Hour'}
             style={{
-              left: `${(h * ratio) + globalOffset}%`,
+              left: `${(h * ratio)}%`,
             }}></div>
       );
     }
@@ -65,50 +76,64 @@ class Main extends React.Component {
         <LocalTime time={today} />
 
         <div className="c-Availability">
-          <ul className="c-Availability__People">
+          <div className="c-Availability__People">
             {this.state.people.map((person) => {
               return <Person key={person._id} person={person} />
             })}
-          </ul>
+          </div>
 
-          <ul className="c-Availability__List">
-            {hourMarkers}
+          <div className="c-Availability__List">
+            <div className="c-Availability__ZoomContainer">
+              <div className="c-Availability__PanContainer">
+                <div className="c-Availability__LocalOffsetContainer" style={{
+                      WebkitTransform: `translateX(${getLocalOffset(today)}%)`
+                    }}>
 
-            {this.state.people.map((person) => {
-              // var offset = barOffset(person.time);
-              var offset = (today.utcOffset() - person.time.utcOffset());
-              offset = offset - (today.hours() * 60);
-              offset = offset - today.minutes();
-              var percentShift = (offset / 60) * (100/24);
-
-
-              var todayOffset = percentShift;
-              var yesterdayOffset = todayOffset - 100;
-              var dayBeforeOffset = yesterdayOffset - 100;
-              var tomorrowOffset = todayOffset + 100;
-
-              return (
-                <li key={person._id} className="c-Availability__Row">
-                  <div className="c-Availability__Day"
-                      style={{WebkitTransform: `translateX(${dayBeforeOffset}%)`}}>
-                    <AvailabilityBar person={person} time={dayBefore} />
+                  <div className="c-Availability__Background" style={{
+                        WebkitTransform: 'translateX(-100%)'
+                      }}>
+                    {hourMarkers}
                   </div>
-                  <div className="c-Availability__Day"
-                      style={{WebkitTransform: `translateX(${yesterdayOffset}%)`}}>
-                    <AvailabilityBar person={person} time={yesterday} />
+                  <div className="c-Availability__Background">
+                    {hourMarkers}
                   </div>
-                  <div className="c-Availability__Day"
-                      style={{WebkitTransform: `translateX(${todayOffset}%)`}}>
-                    <AvailabilityBar person={person} time={today} />
+                  <div className="c-Availability__Background" style={{
+                        WebkitTransform: 'translateX(100%)'
+                      }}>
+                    {hourMarkers}
                   </div>
-                  <div className="c-Availability__Day"
-                      style={{WebkitTransform: `translateX(${tomorrowOffset}%)`}}>
-                    <AvailabilityBar person={person} time={tomorrow} />
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+
+                  {this.state.people.map((person) => {
+                    var localOffset = getOffset(today, person.time);
+
+                    return (
+                      <div key={person._id} className="c-Availability__Row" style={{
+                            WebkitTransform: `translateX(${localOffset}%)`
+                          }}>
+                        <div className="c-Availability__Day"
+                            style={{WebkitTransform: `translateX(-200%)`}}>
+                          <AvailabilityBar person={person} time={dayBefore} />
+                        </div>
+                        <div className="c-Availability__Day"
+                            style={{WebkitTransform: `translateX(-100%)`}}>
+                          <AvailabilityBar person={person} time={yesterday} />
+                        </div>
+                        <div className="c-Availability__Day"
+                            style={{WebkitTransform: `translateX(0)`}}>
+                          <AvailabilityBar person={person} time={today} />
+                        </div>
+                        <div className="c-Availability__Day"
+                            style={{WebkitTransform: `translateX(100%)`}}>
+                          <AvailabilityBar person={person} time={tomorrow} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="c-Availability__CurrentTimeMarker"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -54,5 +54,5 @@
 
 @media (--breakpoint-large) {
   .c-Person { width: 12em; }
-  .c-Person__Time { opacity: 0.05; }
+  .c-Person__Time { opacity: 0.15; }
 }
