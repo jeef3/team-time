@@ -1,3 +1,4 @@
 node_modules
 tiny-lr.pid
 .env
+data
