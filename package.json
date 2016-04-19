@@ -18,6 +18,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "db": "mongod --dbpath data",
     "build": "browserify . -d -o public/app.js && ./lib/post-css.js app/styles/main.css public/main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -58,8 +59,8 @@
     "dotenv": "^1.0.0",
     "express": "^4.12.2",
     "express-handlebars": "^1.2.2",
-    "mongodb": "^1.4.34",
-    "mongoose": "^3.8.25",
+    "mongodb": "^2.1.16",
+    "mongoose": "^4.4.12",
     "morgan": "^1.5.2"
   },
   "engines": {
