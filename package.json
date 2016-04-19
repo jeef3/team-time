@@ -20,6 +20,7 @@
     "start": "node index.js",
     "db": "mongod --dbpath data",
     "build": "browserify . -d -o public/app.js && ./lib/post-css.js app/styles/main.css public/main.css",
+    "lint": "eslint --ext js,jsx app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "index.js",
@@ -27,12 +28,8 @@
   "browserify": {
     "transform": [
       "reactify",
-      "babelify",
-      "browserify-shim"
+      "babelify"
     ]
-  },
-  "browserify-shim": {
-    "react": "global:React"
   },
   "homepage": "https://github.com/jeef3/team-time",
   "devDependencies": {
@@ -40,7 +37,11 @@
     "autoprefixer": "^5.1.0",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
-    "browserify-shim": "^3.8.3",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-import": "^1.5.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0",
     "make-livereload": "^0.1.1",
     "minimist": "^1.1.1",
     "moment-timezone": "^0.3.0",
@@ -61,7 +62,9 @@
     "express-handlebars": "^1.2.2",
     "mongodb": "^2.1.16",
     "mongoose": "^4.4.12",
-    "morgan": "^1.5.2"
+    "morgan": "^1.5.2",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
   },
   "engines": {
     "node": "0.10.x"

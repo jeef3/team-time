@@ -1,10 +1,9 @@
-'use strict';
-
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Main from './components/Main.react';
+import Main from './components/Main.jsx';
 
 // Application root element
-React.render(
+ReactDOM.render(
   <Main />,
   document.getElementById('app'));

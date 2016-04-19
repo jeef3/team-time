@@ -1,5 +1,3 @@
-'use strict';
-
 class PeopleStore {
   constructor() {
     this.people = window.people;

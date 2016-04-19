@@ -1,0 +1,112 @@
+
+> team-time@1.0.3 lint /Users/jeffknaggs/projects/team-time
+> eslint --ext js,jsx app
+
+
+/Users/jeffknaggs/projects/team-time/app/app.js
+  1:1  error    'use strict' is unnecessary inside of modules                               strict
+  8:1  warning  React.render is deprecated since React 0.14.0, use ReactDOM.render instead  react/no-deprecated
+
+/Users/jeffknaggs/projects/team-time/app/components/AvailabilityBar.react.js
+   1:1   error  'use strict' is unnecessary inside of modules                                                                      strict
+   6:3   error  Unexpected var, use let or const instead                                                                           no-var
+   8:11  error  Unexpected string concatenation                                                                                    prefer-template
+   9:12  error  Unexpected string concatenation                                                                                    prefer-template
+   9:41  error  Missing trailing comma                                                                                             comma-dangle
+  13:1   error  Component should be written as a pure function                                                                     react/prefer-stateless-function
+  15:5   error  Unexpected var, use let or const instead                                                                           no-var
+  16:21  error  'person' is missing in props validation                                                                            react/prop-types
+  16:28  error  'person.availability' is missing in props validation                                                               react/prop-types
+  19:33  error  'person' is missing in props validation                                                                            react/prop-types
+  19:40  error  'person.availability' is missing in props validation                                                               react/prop-types
+  19:64  error  'time' is missing in props validation                                                                              react/prop-types
+  19:69  error  'time.format' is missing in props validation                                                                       react/prop-types
+  22:5   error  Unexpected var, use let or const instead                                                                           no-var
+  22:5   error  All 'var' declarations must be at the top of the function scope                                                    vars-on-top
+  24:5   error  All 'var' declarations must be at the top of the function scope                                                    vars-on-top
+  24:5   error  Unexpected var, use let or const instead                                                                           no-var
+  28:40  error  The closing bracket must be aligned with the line containing the opening tag (expected column 9 on the next line)  react/jsx-closing-bracket-location
+  38:61  error  'time' is missing in props validation                                                                              react/prop-types
+  38:66  error  'time.format' is missing in props validation                                                                       react/prop-types
+
+/Users/jeffknaggs/projects/team-time/app/components/LocalTime.react.js
+  1:1   error  'use strict' is unnecessary inside of modules   strict
+  5:1   error  Component should be written as a pure function  react/prefer-stateless-function
+  7:53  error  'time' is missing in props validation           react/prop-types
+  7:58  error  'time.format' is missing in props validation    react/prop-types
+
+/Users/jeffknaggs/projects/team-time/app/components/Main.react.js
+    1:1   error  'use strict' is unnecessary inside of modules                                                                       strict
+   12:3   error  Assignment to property of function parameter 'person'                                                               no-param-reassign
+   21:3   error  Unexpected var, use let or const instead                                                                            no-var
+   23:3   error  Unexpected var, use let or const instead                                                                            no-var
+   31:3   error  Unexpected var, use let or const instead                                                                            no-var
+   34:3   error  Unexpected var, use let or const instead                                                                            no-var
+   34:3   error  All 'var' declarations must be at the top of the function scope                                                     vars-on-top
+   34:42  error  Infix operators must be spaced                                                                                      space-infix-ops
+   40:3   error  Unexpected var, use let or const instead                                                                            no-var
+   41:3   error  Unexpected var, use let or const instead                                                                            no-var
+   41:42  error  Infix operators must be spaced                                                                                      space-infix-ops
+   56:5   error  Unexpected var, use let or const instead                                                                            no-var
+   57:5   error  Unexpected var, use let or const instead                                                                            no-var
+   58:5   error  Unexpected var, use let or const instead                                                                            no-var
+   59:5   error  Unexpected var, use let or const instead                                                                            no-var
+   61:5   error  Unexpected var, use let or const instead                                                                            no-var
+   63:5   error  Unexpected var, use let or const instead                                                                            no-var
+   68:13  error  Expected indentation of 10 space characters but found 12                                                            react/jsx-indent-props
+   70:15  error  The closing bracket must be aligned with the line containing the opening tag (expected column 9 on the next line)   react/jsx-closing-bracket-location
+   80:48  error  Unexpected block statement surrounding arrow body                                                                   arrow-body-style
+   81:65  error  Missing semicolon                                                                                                   semi
+   89:23  error  Expected indentation of 18 space characters but found 22                                                            indent
+   89:79  error  Missing trailing comma                                                                                              comma-dangle
+   90:21  error  Expected indentation of 16 space characters but found 20                                                            indent
+   90:23  error  The closing bracket must be aligned with the line containing the opening tag (expected column 17 on the next line)  react/jsx-closing-bracket-location
+   93:25  error  Expected indentation of 20 space characters but found 24                                                            indent
+   93:61  error  Missing trailing comma                                                                                              comma-dangle
+   94:23  error  Expected indentation of 18 space characters but found 22                                                            indent
+   94:25  error  The closing bracket must be aligned with the line containing the opening tag (expected column 19 on the next line)  react/jsx-closing-bracket-location
+  101:25  error  Expected indentation of 20 space characters but found 24                                                            indent
+  101:60  error  Missing trailing comma                                                                                              comma-dangle
+  102:23  error  Expected indentation of 18 space characters but found 22                                                            indent
+  102:25  error  The closing bracket must be aligned with the line containing the opening tag (expected column 19 on the next line)  react/jsx-closing-bracket-location
+  107:21  error  Unexpected var, use let or const instead                                                                            no-var
+  111:29  error  Expected indentation of 24 space characters but found 28                                                            indent
+  111:75  error  Missing trailing comma                                                                                              comma-dangle
+  112:27  error  Expected indentation of 22 space characters but found 26                                                            indent
+  112:29  error  The closing bracket must be aligned with the line containing the opening tag (expected column 23 on the next line)  react/jsx-closing-bracket-location
+  114:29  error  Expected indentation of 26 space characters but found 28                                                            react/jsx-indent-props
+  114:36  error  A space is required after '{'                                                                                       object-curly-spacing
+  114:54  error  Strings must use singlequote                                                                                        quotes
+  114:73  error  A space is required before '}'                                                                                      object-curly-spacing
+  114:75  error  The closing bracket must be aligned with the line containing the opening tag (expected column 25 on the next line)  react/jsx-closing-bracket-location
+  118:29  error  Expected indentation of 26 space characters but found 28                                                            react/jsx-indent-props
+  118:36  error  A space is required after '{'                                                                                       object-curly-spacing
+  118:54  error  Strings must use singlequote                                                                                        quotes
+  118:73  error  A space is required before '}'                                                                                      object-curly-spacing
+  118:75  error  The closing bracket must be aligned with the line containing the opening tag (expected column 25 on the next line)  react/jsx-closing-bracket-location
+  122:29  error  Expected indentation of 26 space characters but found 28                                                            react/jsx-indent-props
+  122:36  error  A space is required after '{'                                                                                       object-curly-spacing
+  122:54  error  Strings must use singlequote                                                                                        quotes
+  122:69  error  A space is required before '}'                                                                                      object-curly-spacing
+  122:71  error  The closing bracket must be aligned with the line containing the opening tag (expected column 25 on the next line)  react/jsx-closing-bracket-location
+  126:29  error  Expected indentation of 26 space characters but found 28                                                            react/jsx-indent-props
+  126:36  error  A space is required after '{'                                                                                       object-curly-spacing
+  126:54  error  Strings must use singlequote                                                                                        quotes
+  126:72  error  A space is required before '}'                                                                                      object-curly-spacing
+  126:74  error  The closing bracket must be aligned with the line containing the opening tag (expected column 25 on the next line)  react/jsx-closing-bracket-location
+
+/Users/jeffknaggs/projects/team-time/app/components/Person.react.js
+   1:1   error  'use strict' is unnecessary inside of modules                                                                      strict
+   5:1   error  Component should be written as a pure function                                                                     react/prefer-stateless-function
+   7:5   error  Unexpected var, use let or const instead                                                                           no-var
+   7:29  error  'person' is missing in props validation                                                                            react/prop-types
+  12:13  error  Expected indentation of 10 space characters but found 12                                                           react/jsx-indent-props
+  12:20  error  A space is required after '{'                                                                                      object-curly-spacing
+  12:61  error  A space is required before '}'                                                                                     object-curly-spacing
+  12:63  error  The closing bracket must be aligned with the line containing the opening tag (expected column 9 on the next line)  react/jsx-closing-bracket-location
+
+/Users/jeffknaggs/projects/team-time/app/stores/PeopleStore.js
+  1:1  error  'use strict' is unnecessary inside of modules  strict
+
+✖ 93 problems (92 errors, 1 warning)
+
