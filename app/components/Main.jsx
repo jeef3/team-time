@@ -21,18 +21,32 @@ class Main extends Component {
   constructor() {
     this.state = getState();
 
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+
     setInterval(() => {
       this.setState(getState());
     }, 10000);
   }
 
+  handleMouseMove(e) {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    this.setState({
+      mouseX: e.clientX - rect.left,
+      diff: ((e.clientX - rect.left) - (rect.width / 2)) * 2,
+    });
+  }
+
   render() {
-    const today = this.state.now;
+    const { now, people, mouseX, diff } = this.state;
+
+    const today = now;
     const yesterday = today.clone().subtract(1, 'day');
     const dayBefore = yesterday.clone().subtract(1, 'day');
     const tomorrow = today.clone().add(1, 'day');
 
-    const ratio = 100 / 24;
+    const zoom = 24;
+    const ratio = 100 / zoom;
 
     const hourMarkers = [];
 
@@ -55,12 +69,15 @@ class Main extends Component {
 
         <div className="c-Availability">
           <div className="c-Availability__People">
-            {this.state.people.map(person => (
+            {people.map(person => (
               <Person key={person._id} person={person} />
             ))}
           </div>
 
-          <div className="c-Availability__List">
+          <div
+            className="c-Availability__List"
+            onMouseMove={this.handleMouseMove}
+          >
             <div className="c-Availability__ZoomContainer">
               <div className="c-Availability__PanContainer">
                 <div
@@ -83,7 +100,7 @@ class Main extends Component {
                     {hourMarkers}
                   </div>
 
-                  {this.state.people.map((person) => {
+                  {people.map((person) => {
                     const localOffset = getOffset(today, person.time);
 
                     return (
@@ -122,6 +139,16 @@ class Main extends Component {
                 </div>
                 <div className="c-Availability__CurrentTimeMarker"></div>
               </div>
+            </div>
+            <div
+              className="c-TimeInspector"
+              style={{ transform: `translateX(${mouseX - 1}px)` }}
+            >
+              {people.map(person => (
+                <div key={person._id} className="c-TimeInspector__Time">
+                  {person.time.clone().add(diff / zoom, 'hours').format('HH:mm')}
+                </div>
+              ))}
             </div>
           </div>
         </div>

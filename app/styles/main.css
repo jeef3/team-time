@@ -16,6 +16,7 @@
 @import "local-time.css";
 @import "people.css";
 @import "person.css";
+@import "time-inspector.css";
 
 .c-Main {
   padding: 1em;

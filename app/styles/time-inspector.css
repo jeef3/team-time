@@ -1,0 +1,20 @@
+.c-TimeInspector {
+  position: absolute;
+  width: 3px;
+
+  top: 0;
+  bottom: 0;
+
+  background: var(--nothing-much);
+}
+
+.c-TimeInspector__Time {
+  height: 48px;
+  margin-left: 1em;
+  margin-bottom: 0.313em;
+
+  line-height: 48px;
+  font-size: 0.625em;
+
+  transform: translateY(-22px);
+}
